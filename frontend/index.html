@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cost Comparison Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 AI Cost Comparison Dashboard</h1>
+            <p>Compare costs across Claude, GPT, and Gemini APIs</p>
+        </header>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label for="messages">Number of Messages</label>
+                <input type="number" id="messages" value="1000" min="1">
+            </div>
+
+            <div class="input-group">
+                <label for="tokens">Tokens per Message</label>
+                <input type="number" id="tokens" value="500" min="1">
+            </div>
+
+            <button id="calculate-btn" onclick="calculateCosts()">Calculate Costs</button>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Calculating costs...</p>
+        </div>
+
+        <div id="results" class="results" style="display: none;">
+            <div class="summary-card">
+                <h2>💡 Cost Summary</h2>
+                <div id="summary"></div>
+            </div>
+
+            <div class="models-grid">
+                <div class="model-card" id="claude_sonnet"></div>
+                <div class="model-card" id="claude_opus"></div>
+                <div class="model-card" id="gpt4"></div>
+                <div class="model-card" id="gpt4_mini"></div>
+                <div class="model-card" id="gemini_pro"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
